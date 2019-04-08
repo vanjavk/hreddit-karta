@@ -14,6 +14,7 @@ Kao što ste mogli vidjeti dodali smo kartu Hrvatske gdje su obilježeni svi ve�
 - Nacionalni parkovi su označeni tamnijom zelenom bojom
 - Parkovi prirode su označeni svjetlijom zelenom bojom
 - Postoje 3 razine rangiranja parkova koje su obilježene veličinom kružića (službeni podaci iz 2017)
+
  - \>1 000 000 posjeta
  - 100 000 - 1 000 000 posjeta
  - <100 000 posjeta

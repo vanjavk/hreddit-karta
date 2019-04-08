@@ -17,5 +17,7 @@ Kao što ste mogli vidjeti dodali smo kartu Hrvatske gdje su obilježeni svi ve�
  - \>1 000 000 posjeta
  - 100 000 - 1 000 000 posjeta
  - <100 000 posjeta
+
 Karta je napravljena od strane korisnika /u/vanjavk
+
 Ako primijetite neki nedostatak, tj. bug, slobodno ga prijavite na modmail.

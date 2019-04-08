@@ -1,0 +1,86 @@
+/* 
+made by u/vanjavk
+if you have any questions feel free to contact me
+*/
+div.side .md>ul,
+div.side .md>ul p,
+div.side .md>ul a {
+    margin: 0;
+}
+
+div.side .md>ul{
+    background-image: url(%%background%%);
+    background-repeat: no-repeat;
+    width: 312px;
+    height: 312px;
+    overflow: hidden;
+    position:relative;}
+
+div.side .md>ul li{
+
+    background-color:transparent;
+    border:none;
+    padding:0px;
+    margin:0px;
+    display:block
+}
+
+div.side .md>ul a {
+    position: absolute;
+    width: 20px;
+    /* The full size of the dots */
+    height: 20px;
+    overflow: hidden;
+    font-size: 0;
+    background-image: url(%%grbovi%%);
+    /* The spritesheet of flags */
+    background-repeat: no-repeat;
+    transform: scale(0.33);
+    /* We scale every dot to 1/3rd of the size */
+    border-radius: 100%;
+    /*We make the dots round */
+    /*box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.4); /* A drop shadow */
+    transition: transform 0.4s ease;
+    box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
+    /*Smooth transitions*/
+}
+
+/* A trick to make the dots yellows in such a way we can transition
+ * smoothly between yellow and the full flag
+ */
+
+div.side .md>ul a::before {
+    content: "";
+    display: block;
+    background: yellow;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+    /*transition: opacity 0.25s ease;    */
+}
+
+
+div.side .md>ul a:hover::before {
+    opacity: 0;
+}
+
+div.side .md>ul:hover a::before {
+    transition: opacity 0.25s ease-out;
+}
+
+div.side .md>ul:hover a {
+    transform: scale(0.4);
+    transition: transform 0.4s ease;
+    /* when we hover over the map, the dots becomes a bit larger */
+}
+
+
+div.side .md>ul a:hover {
+    box-shadow: none;
+    transition: transform 0.2s ease;
+    transform: scale(1);
+    /* when we hover over a dot, it becomes its full size*/
+    z-index: 1;
+    border-radius: 0%;
+}

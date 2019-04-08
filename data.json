@@ -1,0 +1,394 @@
+{
+	"gradovi":{
+		"Zagreb":{
+			"code":"HR041",
+			"loc":[45.816667, 15.983333],
+			"pop":802588,
+			"den":1300,
+			"web":"https://zagreb.hr/"
+		},
+		"Split":{
+			"code":"HR035",
+			"loc":[43.51, 16.45],
+			"pop":178102,
+			"den":2244,
+			"web":"http://www.split.hr/",
+			"UNESCO":"Dioklecijanova palača"
+		},
+		"Rijeka":{
+			"code":"HR031",
+			"loc":[45.327065, 14.442176],
+			"pop":128642,
+			"den":2923,
+			"web":"https://www.rijeka.hr/"
+		},
+		"Osijek":{
+			"code":"HR04B",
+			"loc":[45.557531, 18.679589],
+			"pop":108048,
+			"den":790,
+			"web":"http://www.osijek.hr/"
+		},
+		"Zadar":{
+			"code":"HR033",
+			"loc":[44.114167, 15.227778],
+			"pop":75082,
+			"den":3000,
+			"web":"http://www.grad-zadar.hr/"
+		},
+		"Slavonski Brod":{
+			"code":"HR04A",
+			"loc":[45.166667, 18.016667],
+			"pop":59141,
+			"den":1200,
+			"web":"https://www.slavonski-brod.hr/"
+		},
+		"Karlovac":{
+			"code":"HR04D",
+			"loc":[45.483333, 15.55],
+			"pop":55705,
+			"den":140,
+			"web":"https://www.karlovac.hr/"
+		},
+		"Sisak":{
+			"code":"HR04E",
+			"loc":[45.470483, 16.386122],
+			"pop":47768,
+			"den":110,
+			"web":"https://sisak.hr"
+		},
+		"Varaždin":{
+			"code":"HR044",
+			"loc":[46.3, 16.333333],
+			"pop":46946,
+			"den":790,
+			"web":"https://varazdin.hr/"
+		},
+		"Šibenik":{
+			"code":"HR034",
+			"loc":[43.74, 15.89],
+			"pop":46332,
+			"den":107,
+			"web":"http://www.sibenik.hr/",
+			"UNESCO":"Šibenska Katedrala"
+		},
+		"Dubrovnik":{
+			"code":"HR037",
+			"loc":[42.640278, 18.108333],
+			"pop":43950,
+			"den":2100,
+			"web":"https://www.dubrovnik.hr/",
+			"UNESCO":"Stari grad Dubrovnik"
+		},
+		"Bjelovar":{
+			"code":"HR047",
+			"loc":[45.9, 16.833333],
+			"pop":40276,
+			"den":210,
+			"web":"http://www.bjelovar.hr/"
+		},
+		"Koprivnica":{
+			"code":"HR045",
+			"loc":[46.162778, 16.828333],
+			"pop":30854,
+			"den":340,
+			"web":"https://koprivnica.hr/"
+		},
+		"Vukovar":{
+			"code":"HR04C",
+			"loc":[45.35, 19.003333],
+			"pop":27683,
+			"den":280,
+			"web":"http://www.vukovar.hr/"
+		},
+		"Čakovec":{
+			"code":"HR046",
+			"loc":[46.385833, 16.433333],
+			"pop":27104,
+			"den":370,
+			"web":"https://www.cakovec.hr/web/"
+		},
+		"Požega":{
+			"code":"HR049",
+			"loc":[45.333056, 17.673611],
+			"pop":26248,
+			"den":200,
+			"web":"http://www.pozega.hr/"
+		},
+		"Virovitica":{
+			"code":"HR048",
+			"loc":[45.833333, 17.383333],
+			"pop":21291,
+			"den":120,
+			"web":"https://www.virovitica.hr/"
+		},
+		"Gospić":{
+			"code":"HR042",
+			"loc":[44.546, 15.375],
+			"pop":12745,
+			"den":13,
+			"web":"http://gospic.hr/"
+		},
+		"Krapina":{
+			"code":"HR043",
+			"loc":[46.16, 15.87],
+			"pop":12479,
+			"den":260,
+			"web":"https://www.krapina.hr/"
+		},
+		"Pazin":{
+			"code":"HR036",
+			"loc":[45.240278, 13.936667],
+			"pop":8638,
+			"den":64,
+			"web":"http://www.pazin.hr/"
+		},
+		"Sarajevo (Bosna i Hercegovina)":{
+			"code":"BIH",
+			"loc":[43.866667, 18.416667],
+			"pop":275524,
+			"den":1900,
+			"web":"https://www.reddit.com/r/bih"
+		},
+		"Ljubljana (Slovenija)":{
+			"code":"SI",
+			"loc":[46.055556, 14.508333],
+			"pop":290010,
+			"den":1712,
+			"web":"https://www.reddit.com/r/slovenia"
+		},
+		"Podgorica (Crna Gora)":{
+			"code":"ME",
+			"loc":[42.441286, 19.262892],
+			"pop":150917,
+			"den":1400,
+			"web":"https://www.reddit.com/r/montenegro"
+		}
+	},
+	"zupanije":{
+		"Grad Zagreb":{
+			"code":"HR041",
+			"gdpp":22125,
+			"web":""
+		},
+		"Zagrebačka županija":{
+			"code":"HR042",
+			"gdpp":10358,
+			"web":""
+		},
+		"Splitsko-dalmatinska županija":{
+			"code":"HR035",
+			"gdpp":10412,
+			"web":""
+		},
+		"Primorsko-goranska županija":{
+			"code":"HR031",
+			"gdpp":14139,
+			"web":""
+		},
+		"Osječko-baranjska županija":{
+			"code":"HR04B",
+			"gdpp":10641,
+			"web":""
+		},
+		"Zadarska županija":{
+			"code":"HR033",
+			"gdpp":10148,
+			"web":""
+		},
+		"Brodsko-posavska županija":{
+			"code":"HR04A",
+			"gdpp":7746,
+			"web":""
+		},
+		"Karlovačka županija":{
+			"code":"HR04D",
+			"gdpp":10158,
+			"web":""
+		},
+		"Sisačko-moslavačka županija":{
+			"code":"HR04E",
+			"gdpp":12538,
+			"web":""
+		},
+		"Varaždinska županija":{
+			"code":"HR044",
+			"gdpp":10583,
+			"web":""
+		},
+		"Šibensko-kninska županija":{
+			"code":"HR034",
+			"gdpp":9664,
+			"web":""
+		},
+		"Dubrovačko-neretvanska županija":{
+			"code":"HR037",
+			"gdpp":12415,
+			"web":""
+		},
+		"Bjelovarsko-bilogorska županija":{
+			"code":"HR047",
+			"gdpp":8831,
+			"web":""
+		},
+		"Koprivničko-križevačka županija":{
+			"code":"HR045",
+			"gdpp":10583,
+			"web":""
+		},
+		"Vukovarsko-srijemska županija":{
+			"code":"HR04C",
+			"gdpp":8003,
+			"web":""
+		},
+		"Međimurska županija":{
+			"code":"HR046",
+			"gdpp":10847,
+			"web":""
+		},
+		"Požeško-slavonska županija":{
+			"code":"HR049",
+			"gdpp":7874,
+			"web":""
+		},
+		"Virovitičko-podravska županija":{
+			"code":"HR048",
+			"gdpp":7641,
+			"web":""
+		},
+		"Ličko-senjska županija":{
+			"code":"HR032",
+			"gdpp":9831,
+			"web":""
+		},
+		"Krapinsko-zagorska županija":{
+			"code":"HR043",
+			"gdpp":8531,
+			"web":""
+		},
+		"Istarska županija":{
+			"code":"HR036",
+			"gdpp":15003,
+			"web":""
+		}
+	},
+	"np":{
+		"Brijuni":{
+			"code":"NP1",
+			"loc":[44.912778, 13.763889],
+			"visits":169299,
+			"web":"http://www.np-brijuni.hr"
+		},
+		"Kornati":{
+			"code":"NP2",
+			"loc":[43.796667, 15.332222],
+			"visits":229061,
+			"web":"http://www.np-kornati.hr/"
+		},
+		"Krka":{
+			"code":"NP3",
+			"loc":[43.858889, 15.976111],
+			"visits":1284720,
+			"web":"http://www.np-krka.hr/"
+		},
+		"Mljet":{
+			"code":"NP4",
+			"loc":[42.766667, 17.45],
+			"visits":140329,
+			"web":"https://np-mljet.hr/"
+		},
+		"Paklenica":{
+			"code":"NP5",
+			"loc":[44.366667, 15.433333],
+			"visits":140561,
+			"web":"https://np-paklenica.hr/"
+		},
+		"Plitvička jezera":{
+			"code":"NP6",
+			"loc":[44.871667, 15.599722],
+			"visits":1720331,
+			"web":"https://np-plitvicka-jezera.hr/",
+			"UNESCO":"Plitvička jezera"
+		},
+		"Risnjak":{
+			"code":"NP7",
+			"loc":[45.428333, 14.745],
+			"visits":16575,
+			"web":"http://np-risnjak.hr/"
+		},
+		"Sjeverni Velebit":{
+			"code":"NP8",
+			"loc":[44.693056, 15.006944],
+			"visits":22919,
+			"web":"http://www.np-sjeverni-velebit.hr/"
+		}
+	},
+	"pp":{
+		"Biokovo":{
+			"code":"PP1",
+			"loc":[43.35, 17.033333],
+			"visits":64130,
+			"web":"https://pp-biokovo.hr/"
+		},
+		"Kopački rit":{
+			"code":"PP2",
+			"loc":[45.630833, 18.891944],
+			"visits":37062,
+			"web":"https://pp-kopacki-rit.hr/"
+		},
+		"Lonjsko polje":{
+			"code":"PP3",
+			"loc":[45.666954, 16.379991],
+			"visits":17000,
+			"web":"http://www.pp-lonjsko-polje.hr/"
+		},
+		"Medvednica":{
+			"code":"PP4",
+			"loc":[45.914495, 15.977096],
+			"visits":34423,
+			"web":"http://www.pp-medvednica.hr/"
+		},
+		"Papuk":{
+			"code":"PP5",
+			"loc":[45.488539, 17.761459],
+			"visits":7470,
+			"web":"http://pp-papuk.hr/"
+		},
+		"Telašćica":{
+			"code":"PP6",
+			"loc":[43.891167, 15.158347],
+			"visits":123327,
+			"web":"http://pp-telascica.hr/"
+		},
+		"Velebit":{
+			"code":"PP7",
+			"loc":[44.363130, 15.672000],
+			"visits":49889,
+			"web":"http://www.pp-velebit.hr/"
+		},
+		"Vransko jezero":{
+			"code":"PP8",
+			"loc":[43.890000, 15.570000],
+			"visits":114598,
+			"web":"http://www.pp-vransko-jezero.hr/"
+		},
+		"Učka":{
+			"code":"PP9",
+			"loc":[45.224163, 14.198154],
+			"visits":30000,
+			"web":"http://www.pp-ucka.hr/"
+		},
+		"Žumberak – Samoborsko gorje":{
+			"code":"PP10",
+			"loc":[45.710000, 15.430000],
+			"visits":41674,
+			"web":"http://www.park-zumberak.hr/"
+		},
+		"Lastovsko otočje":{
+			"code":"PP11",
+			"loc":[42.750000, 16.880000],
+			"visits":24520,
+			"web":"http://pp-lastovo.hr/"
+		}
+	}
+}

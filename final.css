@@ -1,0 +1,701 @@
+/* 
+made by u/vanjavk
+if you have any questions feel free to contact me
+*/
+body,
+p,
+a {
+    margin: 0;
+}
+
+body {
+    background-image: url(%%background%%);
+    background-repeat: no-repeat;
+    width: 312px;
+    height: 312px;
+    overflow: hidden;
+}
+
+a {
+    position: absolute;
+    width: 20px;
+    /* The full size of the dots */
+    height: 20px;
+    overflow: hidden;
+    font-size: 0;
+    background-image: url(%%grbovi%%);
+    /* The spritesheet of flags */
+    background-repeat: no-repeat;
+    transform: scale(0.33);
+    /* We scale every dot to 1/3rd of the size */
+    border-radius: 100%;
+    /*We make the dots round */
+    /*box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.4); /* A drop shadow */
+    transition: transform 0.4s ease;
+    box-shadow: 0px 0px 3px 1.5px rgba(0,0,0,0.5);
+    /*Smooth transitions*/
+}
+
+/* A trick to make the dots yellows in such a way we can transition
+ * smoothly between yellow and the full flag
+ */
+
+a::before {
+    content: "";
+    display: block;
+    background: yellow;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+    /*transition: opacity 0.25s ease;    */
+}
+
+
+a:hover::before {
+    opacity: 0;
+}
+
+body:hover a::before {
+    transition: opacity 0.25s ease-out;
+}
+
+body:hover a {
+    transform: scale(0.4);
+    transition: transform 0.4s ease;
+    /* when we hover over the map, the dots becomes a bit larger */
+}
+
+
+body a:hover {
+    box-shadow: none;
+    transition: transform 0.2s ease;
+    transform: scale(1);
+    /* when we hover over a dot, it becomes its full size*/
+    z-index: 1;
+    border-radius: 0%;
+}
+
+a[href="https://zagreb.hr/"]{
+  top: 48.56504302055591px;
+  left: 120.28574479154335px;
+  background-position: 0px -0px;
+}
+
+a[href="https://zagreb.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.split.hr/"]{
+  top: 215.91781254016496px;
+  left: 144.4937682850608px;
+  background-position: 0px -20px;
+}
+
+a[href="http://www.split.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.rijeka.hr/"]{
+  top: 84.08653383927413px;
+  left: 40.33930576071643px;
+  background-position: 0px -40px;
+}
+
+a[href="https://www.rijeka.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.osijek.hr/"]{
+  top: 67.36581802719283px;
+  left: 260.1521347281308px;
+  background-position: 0px -60px;
+}
+
+a[href="http://www.osijek.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.grad-zadar.hr/"]{
+  top: 172.08442839656988px;
+  left: 81.09185880722355px;
+  background-position: 0px -80px;
+}
+
+a[href="http://www.grad-zadar.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.slavonski-brod.hr/"]{
+  top: 95.7236923564794px;
+  left: 225.7635206834918px;
+  background-position: 0px -100px;
+}
+
+a[href="https://www.slavonski-brod.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.karlovac.hr/"]{
+  top: 72.74901412477224px;
+  left: 97.80689918104082px;
+  background-position: 0px -120px;
+}
+
+a[href="https://www.karlovac.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://sisak.hr"]{
+  top: 73.68130434625935px;
+  left: 141.18014181325353px;
+  background-position: 0px -140px;
+}
+
+a[href="https://sisak.hr"]::before{
+  background: #ffff00;
+}
+
+a[href="https://varazdin.hr/"]{
+  top: 13.498379236741354px;
+  left: 138.44174944310672px;
+  background-position: 0px -160px;
+}
+
+a[href="https://varazdin.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.sibenik.hr/"]{
+  top: 199.23090585206882px;
+  left: 115.44416084255951px;
+  background-position: 0px -180px;
+}
+
+a[href="http://www.sibenik.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.dubrovnik.hr/"]{
+  top: 279.0176814905303px;
+  left: 230.51863017603506px;
+  background-position: 0px -200px;
+}
+
+a[href="https://www.dubrovnik.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.bjelovar.hr/"]{
+  top: 42.51908652038622px;
+  left: 164.37889894534007px;
+  background-position: 0px -220px;
+}
+
+a[href="http://www.bjelovar.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://koprivnica.hr/"]{
+  top: 23.45407797393176px;
+  left: 164.11952745031778px;
+  background-position: 0px -240px;
+}
+
+a[href="https://koprivnica.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.vukovar.hr/"]{
+  top: 82.42255903539785px;
+  left: 276.94612778503296px;
+  background-position: 0px -260px;
+}
+
+a[href="http://www.vukovar.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.cakovec.hr/web/"]{
+  top: 7.271043316048541px;
+  left: 143.62917934355346px;
+  background-position: 0px -280px;
+}
+
+a[href="https://www.cakovec.hr/web/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.pozega.hr/"]{
+  top: 83.65187619593321px;
+  left: 207.96773116421545px;
+  background-position: 0px -300px;
+}
+
+a[href="http://www.pozega.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.virovitica.hr/"]{
+  top: 47.35589525158279px;
+  left: 192.9097633977968px;
+  background-position: 0px -320px;
+}
+
+a[href="https://www.virovitica.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://gospic.hr/"]{
+  top: 140.7541806755244px;
+  left: 88.72889685525911px;
+  background-position: 0px -340px;
+}
+
+a[href="http://gospic.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.krapina.hr/"]{
+  top: 23.655626786017137px;
+  left: 114.40667486247008px;
+  background-position: 0px -360px;
+}
+
+a[href="https://www.krapina.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="http://www.pazin.hr/"]{
+  top: 90.38308414683793px;
+  left: 14.116380745267449px;
+  background-position: 0px -380px;
+}
+
+a[href="http://www.pazin.hr/"]::before{
+  background: #ffff00;
+}
+
+a[href="https://www.reddit.com/r/bih"]{
+  top: 190.04099102832532px;
+  left: 246.51324028527847px;
+  background-position: 0px -400px;
+}
+
+a[href="https://www.reddit.com/r/bih"]::before{
+  background: #ffcc00;
+}
+
+a[href="https://www.reddit.com/r/slovenia"]{
+  top: 31.23322366484922px;
+  left: 43.77115375995495px;
+  background-position: 0px -420px;
+}
+
+a[href="https://www.reddit.com/r/slovenia"]::before{
+  background: #ffcc00;
+}
+
+a[href="https://www.reddit.com/r/montenegro"]{
+  top: 293.45490294999837px;
+  left: 290.4105689603333px;
+  background-position: 0px -440px;
+}
+
+a[href="https://www.reddit.com/r/montenegro"]::before{
+  background: #ffcc00;
+}
+
+a[href="http://www.np-brijuni.hr"]{
+  top: 114.1437882353223px;
+  left: 5.153643111873738px;
+  background-position: 0px -460px;
+ transform: scale(0.2475);
+}
+body:hover a[href="http://www.np-brijuni.hr"]{
+
+ transform: scale(0.30000000000000004);
+}
+
+a[href="http://www.np-brijuni.hr"]::before{
+  background: #00af00;
+}
+
+body a[href="http://www.np-brijuni.hr"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.np-kornati.hr/"]{
+  top: 195.11961480296324px;
+  left: 86.50981809244601px;
+  background-position: 0px -480px;
+ transform: scale(0.2475);
+}
+body:hover a[href="http://www.np-kornati.hr/"]{
+
+ transform: scale(0.30000000000000004);
+}
+
+a[href="http://www.np-kornati.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="http://www.np-kornati.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.np-krka.hr/"]{
+  top: 190.60529868145596px;
+  left: 119.91110860413309px;
+  background-position: 0px -500px;
+ transform: scale(0.33);
+}
+body:hover a[href="http://www.np-krka.hr/"]{
+
+ transform: scale(0.4);
+}
+
+a[href="http://www.np-krka.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="http://www.np-krka.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="https://np-mljet.hr/"]{
+  top: 269.8479360583491px;
+  left: 196.36806728952752px;
+  background-position: 0px -520px;
+ transform: scale(0.2475);
+}
+body:hover a[href="https://np-mljet.hr/"]{
+
+ transform: scale(0.30000000000000004);
+}
+
+a[href="https://np-mljet.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="https://np-mljet.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="https://np-paklenica.hr/"]{
+  top: 153.76510692376914px;
+  left: 91.75488033908663px;
+  background-position: 0px -540px;
+ transform: scale(0.2475);
+}
+body:hover a[href="https://np-paklenica.hr/"]{
+
+ transform: scale(0.30000000000000004);
+}
+
+a[href="https://np-paklenica.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="https://np-paklenica.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="https://np-plitvicka-jezera.hr/"]{
+  top: 117.12646397816717px;
+  left: 100.38619307614087px;
+  background-position: 0px -560px;
+ transform: scale(0.33);
+}
+body:hover a[href="https://np-plitvicka-jezera.hr/"]{
+
+ transform: scale(0.4);
+}
+
+a[href="https://np-plitvicka-jezera.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="https://np-plitvicka-jezera.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://np-risnjak.hr/"]{
+  top: 76.73936137627341px;
+  left: 56.048088482445024px;
+  background-position: 0px -580px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://np-risnjak.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://np-risnjak.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="http://np-risnjak.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.np-sjeverni-velebit.hr/"]{
+  top: 130.08500784976522px;
+  left: 69.63624986087113px;
+  background-position: 0px -600px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://www.np-sjeverni-velebit.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://www.np-sjeverni-velebit.hr/"]::before{
+  background: #00af00;
+}
+
+body a[href="http://www.np-sjeverni-velebit.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="https://pp-biokovo.hr/"]{
+  top: 227.5260954536227px;
+  left: 174.7537587462334px;
+  background-position: 0px -620px;
+ transform: scale(0.165);
+}
+body:hover a[href="https://pp-biokovo.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="https://pp-biokovo.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="https://pp-biokovo.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="https://pp-kopacki-rit.hr/"]{
+  top: 62.04762831392809px;
+  left: 271.1679014932243px;
+  background-position: 0px -640px;
+ transform: scale(0.165);
+}
+body:hover a[href="https://pp-kopacki-rit.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="https://pp-kopacki-rit.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="https://pp-kopacki-rit.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.pp-lonjsko-polje.hr/"]{
+  top: 59.42698589444716px;
+  left: 140.86210048605713px;
+  background-position: 0px -660px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://www.pp-lonjsko-polje.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://www.pp-lonjsko-polje.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://www.pp-lonjsko-polje.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.pp-medvednica.hr/"]{
+  top: 41.46744864019487px;
+  left: 119.96220478865249px;
+  background-position: 0px -680px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://www.pp-medvednica.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://www.pp-medvednica.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://www.pp-medvednica.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://pp-papuk.hr/"]{
+  top: 72.37130961947551px;
+  left: 212.52478458315971px;
+  background-position: 0px -700px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://pp-papuk.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://pp-papuk.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://pp-papuk.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://pp-telascica.hr/"]{
+  top: 188.26347270720186px;
+  left: 77.49017435304432px;
+  background-position: 0px -720px;
+ transform: scale(0.2475);
+}
+body:hover a[href="http://pp-telascica.hr/"]{
+
+ transform: scale(0.30000000000000004);
+}
+
+a[href="http://pp-telascica.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://pp-telascica.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.pp-velebit.hr/"]{
+  top: 154.02172252792485px;
+  left: 104.13556365958576px;
+  background-position: 0px -740px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://www.pp-velebit.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://www.pp-velebit.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://www.pp-velebit.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.pp-vransko-jezero.hr/"]{
+  top: 188.34814062070205px;
+  left: 98.84438516113013px;
+  background-position: 0px -760px;
+ transform: scale(0.2475);
+}
+body:hover a[href="http://www.pp-vransko-jezero.hr/"]{
+
+ transform: scale(0.30000000000000004);
+}
+
+a[href="http://www.pp-vransko-jezero.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://www.pp-vransko-jezero.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.pp-ucka.hr/"]{
+  top: 91.55225589152823px;
+  left: 27.680835569048476px;
+  background-position: 0px -780px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://www.pp-ucka.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://www.pp-ucka.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://www.pp-ucka.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://www.park-zumberak.hr/"]{
+  top: 56.30392248011742px;
+  left: 91.58198330050476px;
+  background-position: 0px -800px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://www.park-zumberak.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://www.park-zumberak.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://www.park-zumberak.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="http://pp-lastovo.hr/"]{
+  top: 271.05715637909026px;
+  left: 166.7997168569815px;
+  background-position: 0px -820px;
+ transform: scale(0.165);
+}
+body:hover a[href="http://pp-lastovo.hr/"]{
+
+ transform: scale(0.2);
+}
+
+a[href="http://pp-lastovo.hr/"]::before{
+  background: #00ff00;
+}
+
+body a[href="http://pp-lastovo.hr/"]:hover{
+transform: scale(1);
+box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.3);
+}
+
+a[href="https://www.youtube.com/watch?v=cUbCp2WgkYw"]{
+  width: 1px;
+  height: 1px;
+  transform: scale(1);
+  z-index: 1000;
+  opacity: 0;
+  top: 206.1px;
+  left: 148.5px;
+}
+body:hover a[href="https://www.youtube.com/watch?v=cUbCp2WgkYw"] {
+    transform: scale(1);
+    /* when we hover over the map, the dots becomes a bit larger */
+}

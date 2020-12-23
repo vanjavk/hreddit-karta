@@ -86,7 +86,7 @@ zupssgdpp={data["zupanije"][g[i]]["code"]:gdpcolor[i] for i in range(len(g))}
 
 
 for i in range(len(stylecss)):
-
+        
 	#if stylecss[i].prelude[0].value in sthrk:
 		#stylecss[i].prelude[0].value=sthrk[stylecss[i].prelude[0].value]
 	#print(stylecss[i].content[10])
@@ -100,7 +100,7 @@ for i in range(len(stylecss)):
 		hexana=convert_color(cmik,sRGBColor).get_rgb_hex().upper().replace("#","")
 		stylecss[i].content[10].value=hexana
 		#FF8000
-	#print(i)
+	#print(i) 
 
 
 #for i in range(len(stylecss)):
@@ -108,9 +108,33 @@ for i in range(len(stylecss)):
 
 
 doc.getElementsByTagName("style")[0].firstChild.nodeValue=serialize(stylecss)
+
+appendtosvg = '" id="path558"/>	<g class="st5" id="g6530">	</g></g><rect class="st29" height="978.8" width="978.8" x="0.5" y="0.5"/></svg>' #zbog nekog razloga ovaj dio nestane???
+
+
+
+
 newsvg= open("hredditnew.svg","w", encoding="utf8")
 doc.writexml(newsvg)
+print(stylecss[2].content[10].value)
+stylecss[2].content[10].value="1a1a1b"
+stylecss[1].content[10].value="8aa5b2"
+stylecss[4].content[10].value="1a1a1b"#dosta los nacin da se zamijeni u night mode
+#print(stylecss[10].content[14].value)
+for i in range(6,len(stylecss)):
+        
+        stylecss[i].content[14].value="000000"
+#F0EEE8 default - nightmode reddit #1a1a1b
 
+doc.getElementsByTagName("style")[0].firstChild.nodeValue=serialize(stylecss)
+newsvg= open("hredditnewnight.svg","w", encoding="utf8")
+doc.writexml(newsvg)
+            
+
+with open("hredditnewnight.svg", "a") as myfile:
+    myfile.write(appendtosvg)
+with open("hredditnew.svg", "a") as myfile:
+    myfile.write(appendtosvg)
 #for i in zupanije:
 	#print (i.getAttribute('id'),i.getAttribute('class'))
 #	style[0].firstChild.nodeValue=style[0].firstChild.nodeValue.replace("."+i.getAttribute('class'),"#"+i.getAttribute('id'))
@@ -223,3 +247,43 @@ markdown+=postmarkdown
 print("gotovo")
 open("final.css", "w", encoding="utf8").write(css)
 open("final.txt", "w", encoding="utf8").write(markdown)
+
+
+####render png
+##
+##import cairo
+##import rsvg
+##
+##def convert(data, ofile, maxwidth=0, maxheight=0):
+##
+##    svg = rsvg.Handle(data=data)
+##
+##    x = width = svg.props.width
+##    y = height = svg.props.height
+##    print ("actual dims are " + str((width, height)))
+##    print ("converting to " + str((maxwidth, maxheight)))
+##
+##    yscale = xscale = 1
+##
+##    if (maxheight != 0 and width > maxwidth) or (maxheight != 0 and height > maxheight):
+##        x = maxwidth
+##        y = float(maxwidth)/float(width) * height
+##        print ("first resize: " + str((x, y)))
+##        if y > maxheight:
+##            y = maxheight
+##            x = float(maxheight)/float(height) * width
+##            print ("second resize: " + str((x, y)))
+##        xscale = float(x)/svg.props.width
+##        yscale = float(y)/svg.props.height
+##
+##    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, x, y)
+##    context = cairo.Context(surface)
+##    context.scale(xscale, yscale)
+##    svg.render_cairo(context)
+##    surface.write_to_png(ofile)
+#convert("redditnew.svg","redditnew.png",312,312)
+from cairosvg import svg2png
+with open("hredditnew.svg", "r") as myfile:
+    
+    svg2png(bytestring=myfile,write_to='hredditnew.png')
+

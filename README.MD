@@ -22,3 +22,9 @@ Kao što ste mogli vidjeti dodali smo kartu Hrvatske gdje su obilježeni svi ve�
 Karta je napravljena od strane korisnika /u/vanjavk
 
 Ako primijetite neki nedostatak, tj. bug, slobodno ga prijavite na modmail.
+
+...
+
+Bitni podaci za developere:
+
+visina karte: 312px

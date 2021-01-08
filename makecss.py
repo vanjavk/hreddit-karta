@@ -5,7 +5,9 @@ from pprint import pprint
 from colormath.color_objects import CMYKColor, sRGBColor
 from colormath.color_conversions import convert_color
 from PIL import Image, ImageFilter, ImageOps
-KARTA_SIZE=312
+
+KARTA_SIZE = 312
+
 
 def calccoords(xinyin):
     yin, xin = xinyin
@@ -33,13 +35,9 @@ postmarkdown = open("post.txt", "r", encoding="utf8").read()
 css = precss
 markdown = premarkdown
 data = json.loads(open("data.json", "r", encoding="utf8").read())
-width = 20
-height = 20
-grboviim = Image.new("RGBA", (width, 42 * height), (0, 0, 0, 0))
-brojalo = 0
 
 svg_file = open("karta/hreddit.svg", "r+", encoding="utf8")
-#svg_file = open("karta/hredditmodified.svg", "r+", encoding="utf8") #moram modifirati jer ima neki bug u parseru da kada convertam value koji pocinje sa slovom npr FFFFFF u 000000 on mi dodaje neke escapeove "/30 " pa modificiram boje da sve pocinju brojem jer onda mogu promijeniti u broj i nece biti buga????
+# svg_file = open("karta/hredditmodified.svg", "r+", encoding="utf8") #moram modifirati jer ima neki bug u parseru da kada convertam value koji pocinje sa slovom npr FFFFFF u 000000 on mi dodaje neke escapeove "/30 " pa modificiram boje da sve pocinju brojem jer onda mogu promijeniti u broj i nece biti buga????
 try:
     doc = minidom.parse(svg_file)
 except:
@@ -60,8 +58,8 @@ sthrk = {i.getAttribute('class'): i.getAttribute('id') for i in zupanije}
 
 
 import cssutils
-stylecss = cssutils.parseString(style[0].firstChild.nodeValue)
 
+stylecss = cssutils.parseString(style[0].firstChild.nodeValue)
 
 zupss = {i: data["zupanije"][i]["gdpp"] for i in data["zupanije"]}
 # for i in lik:
@@ -90,39 +88,37 @@ for i in stylecss:
     if "HR03" in i.selectorText:
 
         cmik = CMYKColor(1, 0.5, 0, 1 * zupssgdpp[i.selectorText[1:6]])
-        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()#.replace("#", "")
+        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()  # .replace("#", "")
 
-        i.style['fill']=hexana
+        i.style['fill'] = hexana
 
     elif "HR04" in i.selectorText:
 
-
         cmik = CMYKColor(0, 0.5, 1, 1 * zupssgdpp[i.selectorText[1:6]])
-        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()#.replace("#", "")
+        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()  # .replace("#", "")
 
-        i.style['fill']=hexana
+        i.style['fill'] = hexana
 
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 with open("karta/hredditnew.svg", "w", encoding="utf8") as newsvg:
     doc.writexml(newsvg)
 
-
-a=-1
+a = -1
 for i in stylecss:
-    a+=1
-    if a==1:
-        i.style['fill'] = "#24A0ED"#'st1'
-    if a==2:
+    a += 1
+    if a == 1:
+        i.style['fill'] = "#24A0ED"  # 'st1'
+    if a == 2:
         i.style['fill'] = "#1A1A1B"
-    if a==4:
+    if a == 4:
         i.style['fill'] = "#1A1A1B"
-a=-1
+a = -1
 for i in stylecss:
-    a+=1
-    if a<6:
+    a += 1
+    if a < 6:
         continue
     i.style['stroke'] = "#000000"
-    if a==26:
+    if a == 26:
         break
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 
@@ -130,6 +126,10 @@ with open("karta/hredditnewdark.svg", "w", encoding="utf8") as newsvg:
     doc.writexml(writer=newsvg)
 
 ### GENERIRANJE GRBOVA
+width = 20
+height = 20
+grboviim = Image.new("RGBA", (width, 42 * height), (0, 0, 0, 0))
+brojalo = 0
 for j in data:
     for i in data[j]:
         if j in ["gradovi", "np", "pp"]:
@@ -204,7 +204,7 @@ for j in data:
             im.save("grbovi/mini/" + data[j][i]["code"] + ".png")
             brojalo += 1
 
-        #print(i, "generated.")
+        # print(i, "generated.")
 grboviim.save("grbovi/mini/" + "grbovi" + ".png")
 print("grbovi generated.")
 
@@ -216,10 +216,30 @@ open("final.txt", "w", encoding="utf8").write(markdown)
 
 from cairosvg import svg2png
 
-with open(file="karta/hredditnew.svg", mode="r",encoding="utf-8") as myfile:
-
-    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
+with open(file="karta/hredditnew.svg", mode="r", encoding="utf-8") as myfile:
+    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png', output_width=KARTA_SIZE,
+            output_height=KARTA_SIZE)
     print("hredditnew.png done")
-with open(file="karta/hredditnewdark.svg", mode="r",encoding="utf-8") as myfile:
-    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewdark.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
+with open(file="karta/hredditnewdark.svg", mode="r", encoding="utf-8") as myfile:
+    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewdark.png', output_width=KARTA_SIZE,
+            output_height=KARTA_SIZE)
     print("hredditnewdark.png done")
+
+### STACKANJE 2 IMAGEA
+karteim = Image.new("RGBA", (KARTA_SIZE, 2 * KARTA_SIZE), (0, 0, 0, 0))
+im1 = Image.open("karta/hredditnew.png")
+im2 = Image.open("karta/hredditnewdark.png")
+
+im1 = im1.convert(mode="RGBA")
+im2 = im2.convert(mode="RGBA")
+# im.thumbnail(size=(height, width), resample=Image.LANCZOS)
+# im = im.resize(size=(height,width), resample=Image.LANCZOS)
+# addw = width - im.size[0]
+# addh = height - im.size[1]
+karteim.paste(im1, (0, 0))
+karteim.paste(im2, (0, KARTA_SIZE))
+# im.save("karta/hreddit" + data[j][i]["code"] + ".png")
+
+
+# print(i, "generated.")
+karteim.save("karta/background.png")

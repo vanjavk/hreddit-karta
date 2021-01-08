@@ -217,21 +217,20 @@ open("final.txt", "w", encoding="utf8").write(markdown)
 from cairosvg import svg2png
 
 with open(file="karta/hredditnew.svg", mode="r", encoding="utf-8") as myfile:
-    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png', output_width=KARTA_SIZE,
-            output_height=KARTA_SIZE)
+    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png')
     print("hredditnew.png done")
 with open(file="karta/hredditnewdark.svg", mode="r", encoding="utf-8") as myfile:
-    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewdark.png', output_width=KARTA_SIZE,
-            output_height=KARTA_SIZE)
+    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewdark.png')
     print("hredditnewdark.png done")
 
 ### STACKANJE 2 IMAGEA
 karteim = Image.new("RGBA", (KARTA_SIZE, 2 * KARTA_SIZE), (0, 0, 0, 0))
 im1 = Image.open("karta/hredditnew.png")
 im2 = Image.open("karta/hredditnewdark.png")
-
-im1 = im1.convert(mode="RGBA")
-im2 = im2.convert(mode="RGBA")
+im1 = im1.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
+im2 = im2.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
+# im1 = im1.convert(mode="RGBA")
+# im2 = im2.convert(mode="RGBA")
 # im.thumbnail(size=(height, width), resample=Image.LANCZOS)
 # im = im.resize(size=(height,width), resample=Image.LANCZOS)
 # addw = width - im.size[0]

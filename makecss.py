@@ -199,7 +199,7 @@ doc.writexml(newsvg)
 # with open("file_out.txt", "w", encoding="utf8") as fout:
 #    pprint(xmltodict.parse(svg_file)['svg'],fout)
 # pprint(xmltodict.parse(svg_file))
-
+#
 
 for j in data:
     for i in data[j]:

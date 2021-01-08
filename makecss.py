@@ -146,25 +146,20 @@ for i in stylecss:
 #print(serialize(stylecss))
 # doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
-#print(stylecss.cssText.decode('utf-8'))
-newsvg = open("karta/hredditnew.svg", "w", encoding="utf8")
-doc.writexml(newsvg)
-#print(stylecss[2].content[10].value)
+with open("karta/hredditnew.svg", "w", encoding="utf8") as newsvg:
+    doc.writexml(newsvg)
+
+
 a=-1
 for i in stylecss:
     a+=1
     if a==1:
-        i.style['fill'] = "#24a0ed"#'st1'
+        i.style['fill'] = "#24A0ED"#'st1'
     if a==2:
-        i.style['fill'] = "#1a1a1b"
+        i.style['fill'] = "#1A1A1B"
     if a==4:
-        i.style['fill'] = "#1a1a1b"
-# stylecss[1].content[10].value = "8aa5b2"
-# stylecss[2].content[10].value = "1a1a1b"
-# stylecss[4].content[10].value = "1a1a1b"  # dosta los nacin da se zamijeni u night mode
-# print(stylecss[10].content[14].value)
+        i.style['fill'] = "#1A1A1B"
 a=-1
-# for i in range(6, len(stylecss)):
 for i in stylecss:
     a+=1
     if a<6:
@@ -172,13 +167,10 @@ for i in stylecss:
     i.style['stroke'] = "#000000"
     if a==26:
         break
-# F0EEE8 default - nightmode reddit #1a1a1b
-
-# doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
-newsvg = open("karta/hredditnewdark.svg", "w", encoding="utf8")
 
-doc.writexml(writer=newsvg)
+with open("karta/hredditnewdark.svg", "w", encoding="utf8") as newsvg:
+    doc.writexml(writer=newsvg)
 
 # with open("hredditnewnight.svg", "a") as myfile:
 #     myfile.write(appendtosvg)

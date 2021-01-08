@@ -5,12 +5,12 @@
 .st1 {
     fill-rule: evenodd;
     clip-rule: evenodd;
-    fill: #24a0ed
+    fill: #24A0ED
     }
 .st2 {
     fill-rule: evenodd;
     clip-rule: evenodd;
-    fill: #1a1a1b
+    fill: #1A1A1B
     }
 .st3 {
     fill-rule: evenodd;
@@ -20,7 +20,7 @@
 .st4 {
     fill-rule: evenodd;
     clip-rule: evenodd;
-    fill: #1a1a1b
+    fill: #1A1A1B
     }
 .st5 {
     display: inline

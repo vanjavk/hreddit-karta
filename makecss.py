@@ -147,8 +147,6 @@ for i in stylecss:
 # doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 #print(stylecss.cssText.decode('utf-8'))
-appendtosvg = ""#'" id="path558"/>	<g class="st5" id="g6530">	</g></g><rect class="st29" height="978.8" width="978.8" x="0.5" y="0.5"/></svg>'  # zbog nekog razloga ovaj dio nestane???
-
 newsvg = open("karta/hredditnew.svg", "w", encoding="utf8")
 doc.writexml(newsvg)
 #print(stylecss[2].content[10].value)
@@ -156,7 +154,7 @@ a=-1
 for i in stylecss:
     a+=1
     if a==1:
-        i.style['fill'] = "#8aa5b2"#'st1'
+        i.style['fill'] = "#24a0ed"#'st1'
     if a==2:
         i.style['fill'] = "#1a1a1b"
     if a==4:
@@ -172,12 +170,15 @@ for i in stylecss:
     if a<6:
         continue
     i.style['stroke'] = "#000000"
+    if a==26:
+        break
 # F0EEE8 default - nightmode reddit #1a1a1b
 
 # doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 newsvg = open("karta/hredditnewdark.svg", "w", encoding="utf8")
-doc.writexml(newsvg)
+
+doc.writexml(writer=newsvg)
 
 # with open("hredditnewnight.svg", "a") as myfile:
 #     myfile.write(appendtosvg)
@@ -199,8 +200,8 @@ doc.writexml(newsvg)
 # with open("file_out.txt", "w", encoding="utf8") as fout:
 #    pprint(xmltodict.parse(svg_file)['svg'],fout)
 # pprint(xmltodict.parse(svg_file))
-#
 
+### GENERIRANJE GRBOVA
 for j in data:
     for i in data[j]:
         if j in ["gradovi", "np", "pp"]:
@@ -328,5 +329,5 @@ with open(file="karta/hredditnew.svg", mode="r",encoding="utf-8") as myfile:
     svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
     print("hredditnew.png done")
 with open(file="karta/hredditnewdark.svg", mode="r",encoding="utf-8") as myfile:
-    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewnight.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
+    svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewdark.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
     print("hredditnewdark.png done")

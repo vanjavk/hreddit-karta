@@ -40,8 +40,8 @@ height = 20
 grboviim = Image.new("RGBA", (width, 42 * height), (0, 0, 0, 0))
 brojalo = 0
 
-# svg_file = open("hreddit.svg", "r+", encoding="utf8")
-svg_file = open("karta/hredditmodified.svg", "r+", encoding="utf8") #moram modifirati jer ima neki bug u parseru da kada convertam value koji pocinje sa slovom npr FFFFFF u 000000 on mi dodaje neke escapeove "/30 " pa modificiram boje da sve pocinju brojem jer onda mogu promijeniti u broj i nece biti buga????
+svg_file = open("karta/hreddit.svg", "r+", encoding="utf8")
+#svg_file = open("karta/hredditmodified.svg", "r+", encoding="utf8") #moram modifirati jer ima neki bug u parseru da kada convertam value koji pocinje sa slovom npr FFFFFF u 000000 on mi dodaje neke escapeove "/30 " pa modificiram boje da sve pocinju brojem jer onda mogu promijeniti u broj i nece biti buga????
 try:
     doc = minidom.parse(svg_file)
 except:
@@ -59,8 +59,22 @@ style = doc.getElementsByTagName("style")
 # stylecss=str(style[0].firstChild.nodeValue)
 sthrk = {i.getAttribute('class'): i.getAttribute('id') for i in zupanije}
 # pprint(sthrk)
-stylecss = parse_stylesheet(style[0].firstChild.nodeValue, skip_whitespace=True)
-print(serialize(stylecss))
+
+
+import cssutils
+stylecss = cssutils.parseString(style[0].firstChild.nodeValue)
+# print(stylecss)
+# for i in stylecss:
+#     print(i.selectorText) #HR04E_Sisačko-moslavačka_županija
+#     print(i.style['stroke'])
+#     # for j in i.style:
+#     #     print(j)
+# stylecss = parse_stylesheet(style[0].firstChild.nodeValue, skip_whitespace=True)
+
+
+
+
+#print(serialize(stylecss))
 # pprint(stylecss)
 # pprint(stylecss[1])
 # pprint(stylecss[1].prelude)
@@ -90,30 +104,38 @@ zupssgdpp = {data["zupanije"][g[i]]["code"]: gdpcolor[i] for i in range(len(g))}
 # pprint(zupssgdpp)
 
 
-for i in range(len(stylecss)):
+# for i in range(len(stylecss)):
+for i in stylecss:
 
     # if stylecss[i].prelude[0].value in sthrk:
     # stylecss[i].prelude[0].value=sthrk[stylecss[i].prelude[0].value]
     # print(stylecss[i].content[10])
-    try:
-        print(stylecss[i].prelude[0].value, stylecss[i].content[10].value)
-    except:
-        pass
+    # try:
+    #     print(stylecss[i].prelude[0].value, stylecss[i].content[10].value)
+    # except:
+    #     pass
 
-    if "HR03" in stylecss[i].prelude[0].value:
-        cmik = CMYKColor(1, 0.5, 0, 1 * zupssgdpp[stylecss[i].prelude[0].value[0:5]])
-        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper().replace("#", "")
-        stylecss[i].content[10].value = hexana
+    # if "HR03" in stylecss[i].prelude[0].value:
+    if "HR03" in i.selectorText:
+        # cmik = CMYKColor(1, 0.5, 0, 1 * zupssgdpp[stylecss[i].prelude[0].value[0:5]])
+        cmik = CMYKColor(1, 0.5, 0, 1 * zupssgdpp[i.selectorText[1:6]])
+        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()#.replace("#", "")
+        # stylecss[i].content[10].value = hexana
+        i.style['fill']=hexana
     # 0080FF
-    elif "HR04" in stylecss[i].prelude[0].value: #HR04E_Sisačko-moslavačka_županija
-        cmik = CMYKColor(0, 0.5, 1, 1 * zupssgdpp[stylecss[i].prelude[0].value[0:5]])
-        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper().replace("#", "")
+    # elif "HR04" in stylecss[i].prelude[0].value: #HR04E_Sisačko-moslavačka_županija
+    elif "HR04" in i.selectorText:
+        # cmik = CMYKColor(0, 0.5, 1, 1 * zupssgdpp[stylecss[i].prelude[0].value[0:5]])
+
+        cmik = CMYKColor(0, 0.5, 1, 1 * zupssgdpp[i.selectorText[1:6]])
+        hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()#.replace("#", "")
         # print(stylecss[i].content[10].value, hexana)
         # print(type(stylecss[i].content[10].value))
         # print(type(hexana))
         #print(color3.parse_color(convert_color(cmik, sRGBColor).get_rgb_hex()))
-        stylecss[i].content[10].value = hexana #DC00E8 = A25100
-        print(stylecss[i].content[10])
+
+        # stylecss[i].content[10].value = hexana #DC00E8 = A25100
+        i.style['fill']=hexana
 
     # FF8000
 # print(i)
@@ -121,23 +143,39 @@ for i in range(len(stylecss)):
 # for i in range(len(stylecss)):
 #	print(stylecss[i].prelude[1].value)
 
-print(serialize(stylecss))
-doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
-
+#print(serialize(stylecss))
+# doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
+doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
+#print(stylecss.cssText.decode('utf-8'))
 appendtosvg = ""#'" id="path558"/>	<g class="st5" id="g6530">	</g></g><rect class="st29" height="978.8" width="978.8" x="0.5" y="0.5"/></svg>'  # zbog nekog razloga ovaj dio nestane???
 
 newsvg = open("karta/hredditnew.svg", "w", encoding="utf8")
 doc.writexml(newsvg)
-print(stylecss[2].content[10].value)
-stylecss[2].content[10].value = "1a1a1b"
-stylecss[1].content[10].value = "8aa5b2"
-stylecss[4].content[10].value = "1a1a1b"  # dosta los nacin da se zamijeni u night mode
+#print(stylecss[2].content[10].value)
+a=-1
+for i in stylecss:
+    a+=1
+    if a==1:
+        i.style['fill'] = "#8aa5b2"#'st1'
+    if a==2:
+        i.style['fill'] = "#1a1a1b"
+    if a==4:
+        i.style['fill'] = "#1a1a1b"
+# stylecss[1].content[10].value = "8aa5b2"
+# stylecss[2].content[10].value = "1a1a1b"
+# stylecss[4].content[10].value = "1a1a1b"  # dosta los nacin da se zamijeni u night mode
 # print(stylecss[10].content[14].value)
-for i in range(6, len(stylecss)):
-    stylecss[i].content[14].value = "000000"
+a=-1
+# for i in range(6, len(stylecss)):
+for i in stylecss:
+    a+=1
+    if a<6:
+        continue
+    i.style['stroke'] = "#000000"
 # F0EEE8 default - nightmode reddit #1a1a1b
 
-doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
+# doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
+doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 newsvg = open("karta/hredditnewdark.svg", "w", encoding="utf8")
 doc.writexml(newsvg)
 
@@ -289,6 +327,6 @@ with open(file="karta/hredditnew.svg", mode="r",encoding="utf-8") as myfile:
 
     svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
     print("hredditnew.png done")
-with open(file="karta/hredditnewnight.svg", mode="r",encoding="utf-8") as myfile:
+with open(file="karta/hredditnewdark.svg", mode="r",encoding="utf-8") as myfile:
     svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewnight.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)
     print("hredditnewdark.png done")

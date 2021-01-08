@@ -1,12 +1,10 @@
 import json
-from tinycss2 import *
 import re
 from xml.dom import minidom
 from pprint import pprint
 from colormath.color_objects import CMYKColor, sRGBColor
 from colormath.color_conversions import convert_color
 from PIL import Image, ImageFilter, ImageOps
-from tinycss2 import color3
 KARTA_SIZE=312
 
 def calccoords(xinyin):
@@ -63,23 +61,7 @@ sthrk = {i.getAttribute('class'): i.getAttribute('id') for i in zupanije}
 
 import cssutils
 stylecss = cssutils.parseString(style[0].firstChild.nodeValue)
-# print(stylecss)
-# for i in stylecss:
-#     print(i.selectorText) #HR04E_Sisačko-moslavačka_županija
-#     print(i.style['stroke'])
-#     # for j in i.style:
-#     #     print(j)
-# stylecss = parse_stylesheet(style[0].firstChild.nodeValue, skip_whitespace=True)
 
-
-
-
-#print(serialize(stylecss))
-# pprint(stylecss)
-# pprint(stylecss[1])
-# pprint(stylecss[1].prelude)
-# pprint(stylecss[1].content)
-# pprint(stylecss[1].content[-2].value)
 
 zupss = {i: data["zupanije"][i]["gdpp"] for i in data["zupanije"]}
 # for i in lik:
@@ -103,48 +85,23 @@ zupssgdpp = {data["zupanije"][g[i]]["code"]: gdpcolor[i] for i in range(len(g))}
 
 # pprint(zupssgdpp)
 
-
-# for i in range(len(stylecss)):
 for i in stylecss:
 
-    # if stylecss[i].prelude[0].value in sthrk:
-    # stylecss[i].prelude[0].value=sthrk[stylecss[i].prelude[0].value]
-    # print(stylecss[i].content[10])
-    # try:
-    #     print(stylecss[i].prelude[0].value, stylecss[i].content[10].value)
-    # except:
-    #     pass
-
-    # if "HR03" in stylecss[i].prelude[0].value:
     if "HR03" in i.selectorText:
-        # cmik = CMYKColor(1, 0.5, 0, 1 * zupssgdpp[stylecss[i].prelude[0].value[0:5]])
+
         cmik = CMYKColor(1, 0.5, 0, 1 * zupssgdpp[i.selectorText[1:6]])
         hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()#.replace("#", "")
-        # stylecss[i].content[10].value = hexana
+
         i.style['fill']=hexana
-    # 0080FF
-    # elif "HR04" in stylecss[i].prelude[0].value: #HR04E_Sisačko-moslavačka_županija
+
     elif "HR04" in i.selectorText:
-        # cmik = CMYKColor(0, 0.5, 1, 1 * zupssgdpp[stylecss[i].prelude[0].value[0:5]])
+
 
         cmik = CMYKColor(0, 0.5, 1, 1 * zupssgdpp[i.selectorText[1:6]])
         hexana = convert_color(cmik, sRGBColor).get_rgb_hex().upper()#.replace("#", "")
-        # print(stylecss[i].content[10].value, hexana)
-        # print(type(stylecss[i].content[10].value))
-        # print(type(hexana))
-        #print(color3.parse_color(convert_color(cmik, sRGBColor).get_rgb_hex()))
 
-        # stylecss[i].content[10].value = hexana #DC00E8 = A25100
         i.style['fill']=hexana
 
-    # FF8000
-# print(i)
-
-# for i in range(len(stylecss)):
-#	print(stylecss[i].prelude[1].value)
-
-#print(serialize(stylecss))
-# doc.getElementsByTagName("style")[0].firstChild.nodeValue = serialize(stylecss)
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 with open("karta/hredditnew.svg", "w", encoding="utf8") as newsvg:
     doc.writexml(newsvg)
@@ -171,27 +128,6 @@ doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.dec
 
 with open("karta/hredditnewdark.svg", "w", encoding="utf8") as newsvg:
     doc.writexml(writer=newsvg)
-
-# with open("hredditnewnight.svg", "a") as myfile:
-#     myfile.write(appendtosvg)
-# with open("hredditnew.svg", "a") as myfile:
-#     myfile.write(appendtosvg)
-# for i in zupanije:
-# print (i.getAttribute('id'),i.getAttribute('class'))
-#	style[0].firstChild.nodeValue=style[0].firstChild.nodeValue.replace("."+i.getAttribute('class'),"#"+i.getAttribute('id'))
-
-
-# for i in [m.start() for m in re.finditer('fill:#', style[0].firstChild.nodeValue)]:
-#	style[0].firstChild.nodeValue=style[0].firstChild.nodeValue.replace(style[0].firstChild.nodeValue[i+6:i+12],"ee42f4")
-
-
-# pprint(style[0].firstChild.nodeValue)
-
-# print(path_strings)
-# doc.unlink()
-# with open("file_out.txt", "w", encoding="utf8") as fout:
-#    pprint(xmltodict.parse(svg_file)['svg'],fout)
-# pprint(xmltodict.parse(svg_file))
 
 ### GENERIRANJE GRBOVA
 for j in data:
@@ -278,44 +214,8 @@ print("gotovo")
 open("final.css", "w", encoding="utf8").write(css)
 open("final.txt", "w", encoding="utf8").write(markdown)
 
-####render png
-##
-##import cairo
-##import rsvg
-##
-##def convert(data, ofile, maxwidth=0, maxheight=0):
-##
-##    svg = rsvg.Handle(data=data)
-##
-##    x = width = svg.props.width
-##    y = height = svg.props.height
-##    print ("actual dims are " + str((width, height)))
-##    print ("converting to " + str((maxwidth, maxheight)))
-##
-##    yscale = xscale = 1
-##
-##    if (maxheight != 0 and width > maxwidth) or (maxheight != 0 and height > maxheight):
-##        x = maxwidth
-##        y = float(maxwidth)/float(width) * height
-##        print ("first resize: " + str((x, y)))
-##        if y > maxheight:
-##            y = maxheight
-##            x = float(maxheight)/float(height) * width
-##            print ("second resize: " + str((x, y)))
-##        xscale = float(x)/svg.props.width
-##        yscale = float(y)/svg.props.height
-##
-##    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, x, y)
-##    context = cairo.Context(surface)
-##    context.scale(xscale, yscale)
-##    svg.render_cairo(context)
-##    surface.write_to_png(ofile)
-# convert("redditnew.svg","redditnew.png",312,312)
 from cairosvg import svg2png
 
-
-# with open("test//croatia.svg", "r") as myfile:
-#     svg2png(bytestring=myfile.read().encode('utf-8'), write_to='test/croatia.png')
 with open(file="karta/hredditnew.svg", mode="r",encoding="utf-8") as myfile:
 
     svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnew.png',output_width=KARTA_SIZE,output_height=KARTA_SIZE)

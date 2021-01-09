@@ -5,7 +5,8 @@
 .st1 {
     fill-rule: evenodd;
     clip-rule: evenodd;
-    fill: #24A0ED
+    fill: #24A0ED;
+    opacity: 0.5
     }
 .st2 {
     fill-rule: evenodd;

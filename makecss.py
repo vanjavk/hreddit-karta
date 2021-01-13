@@ -103,29 +103,29 @@ doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.dec
 with open("karta/hredditnew.svg", "w", encoding="utf8") as newsvg:
     doc.writexml(newsvg)
 
-a = -1
-for i in stylecss:
-    a += 1
-    if a == 1:
-        i.style['fill'] = "#24A0ED"  # 'st1'
-
-        i.style['opacity'] = "0.5"
-    if a == 2:
-        i.style['fill'] = "#1A1A1B"
-    if a == 4:
-        i.style['fill'] = "#1A1A1B"
-a = -1
-for i in stylecss:
-    a += 1
-    if a < 6:
-        continue
-    i.style['stroke'] = "#000000"
-    if a == 26:
-        break
-doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
-
-with open("karta/hredditnewdark.svg", "w", encoding="utf8") as newsvg:
-    doc.writexml(writer=newsvg)
+# a = -1
+# for i in stylecss:
+#     a += 1
+#     if a == 1:
+#         i.style['fill'] = "#24A0ED"  # 'st1'
+#
+#         i.style['opacity'] = "0.5"
+#     if a == 2:
+#         i.style['fill'] = "#1A1A1B"
+#     if a == 4:
+#         i.style['fill'] = "#1A1A1B"
+# a = -1
+# for i in stylecss:
+#     a += 1
+#     if a < 6:
+#         continue
+#     i.style['stroke'] = "#000000"
+#     if a == 26:
+#         break
+# doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
+#
+# with open("karta/hredditnewdark.svg", "w", encoding="utf8") as newsvg:
+#     doc.writexml(writer=newsvg)
 
 ### GENERIRANJE GRBOVA
 width = 20

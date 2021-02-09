@@ -21,4 +21,3 @@ for i in range(len(points)):
     points[i][0]+=x
     points[i][1]+=y
 print(" ".join([str(x)+","+str(y) for x,y in points]))
-print(difx)

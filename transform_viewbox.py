@@ -6,7 +6,7 @@ vb1=list(map(float,viewbox1.split()))
 vb2=list(map(float,viewbox2.split()))
 print(vb1)
 print(vb2)
-difx=(vb1[3]-vb1[1])/(vb2[3]-vb2[1])
+#difx=(vb1[3]-vb1[1])/(vb2[3]-vb2[1])
 x=vb1[0]-vb2[0]
 y=vb1[1]-vb2[1]
 

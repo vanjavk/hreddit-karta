@@ -27,11 +27,11 @@
 	.st18{fill:none;stroke:#0978AB;stroke-width:0.8504;stroke-linejoin:round;stroke-miterlimit:3.8636999;}
 	.st19{fill:none;stroke:#646464;stroke-width:3.1182001;stroke-linejoin:round;stroke-miterlimit:3.8636999;}
 	.st20{fill:none;stroke:#646464;stroke-width:0.8504;stroke-linejoin:round;stroke-miterlimit:3.8636999;}
-	#HR04E_Sisačko-moslavačka_županija {
+#HR04E_Sisačko-moslavačka_županija {
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -40,7 +40,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -49,7 +49,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -58,7 +58,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -67,7 +67,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -76,7 +76,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -85,7 +85,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -94,7 +94,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -103,7 +103,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -112,7 +112,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -121,7 +121,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -130,7 +130,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -139,7 +139,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -148,7 +148,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -157,7 +157,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -166,7 +166,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -175,7 +175,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -184,7 +184,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -193,7 +193,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -202,7 +202,7 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
     stroke-miterlimit: 10;
 }
@@ -211,13 +211,22 @@
     fill-rule: evenodd;
     clip-rule: evenodd;
     fill: #DC00E8;
-    stroke: #FFFFFF;
+
     stroke-width: 1.5;
+    stroke-miterlimit: 10;
+}
+
+#HR0_Hrvatska{
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    stroke: #ffffff;
+    stroke-width: 1.0;
     stroke-miterlimit: 10;
 }
 
 #Sea {
     fill: #C6ECFF;
+    stroke: #C6ECFF;
 }
 </style>
 

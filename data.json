@@ -389,6 +389,12 @@
 			"loc":[42.750000, 16.880000],
 			"visits":24520,
 			"web":"http://pp-lastovo.hr/"
+		},
+		"Dinara":{
+			"code":"PP12",
+			"loc":[43.945094, 16.59693],
+			"visits":100001,
+			"web":"https://mingor.gov.hr/UserDocsImages/Vijesti_dokumenti/08.05.2020.%20Nacrt%20Zakona%20o%20progla%C5%A1enju%20PP%20Dinara%20sa%20obrazlo%C5%BEenjem_javni%20uvid.pdf"
 		}
 	}
 }

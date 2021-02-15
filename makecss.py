@@ -130,7 +130,7 @@ with open("karta/hredditnew.svg", "w", encoding="utf8") as newsvg:
 ### GENERIRANJE GRBOVA
 width = 20
 height = 20
-grboviim = Image.new("RGBA", (width, 42 * height), (0, 0, 0, 0))
+grboviim = Image.new("RGBA", (width, 43 * height), (0, 0, 0, 0))
 brojalo = 0
 for j in data:
     for i in data[j]:
@@ -225,22 +225,22 @@ with open(file="karta/hredditnew.svg", mode="r", encoding="utf-8") as myfile:
 #     svg2png(bytestring=myfile.read().encode('utf-8'), write_to='karta/hredditnewdark.png')
 #     print("hredditnewdark.png done")
 
-### STACKANJE 2 IMAGEA
-# karteim = Image.new("RGBA", (KARTA_SIZE, 2 * KARTA_SIZE), (0, 0, 0, 0))
-# im1 = Image.open("karta/hredditnew.png")
+### RESIZE
+karteim = Image.new("RGBA", (KARTA_SIZE, KARTA_SIZE), (0, 0, 0, 0))
+im1 = Image.open("karta/hredditnew.png")
 # im2 = Image.open("karta/hredditnewdark.png")
-# im1 = im1.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
+im1 = im1.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
 # im2 = im2.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
-# # im1 = im1.convert(mode="RGBA")
+im1 = im1.convert(mode="RGBA")
 # # im2 = im2.convert(mode="RGBA")
 # # im.thumbnail(size=(height, width), resample=Image.LANCZOS)
 # # im = im.resize(size=(height,width), resample=Image.LANCZOS)
 # # addw = width - im.size[0]
 # # addh = height - im.size[1]
-# karteim.paste(im1, (0, 0))
+karteim.paste(im1, (0, 0))
 # karteim.paste(im2, (0, KARTA_SIZE))
-# # im.save("karta/hreddit" + data[j][i]["code"] + ".png")
+#im.save("karta/hreddit" + data[j][i]["code"] + ".png")
 #
 #
 # # print(i, "generated.")
-# karteim.save("karta/background.png")
+karteim.save("karta/background.png")

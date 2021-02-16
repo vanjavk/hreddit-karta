@@ -281,7 +281,7 @@
 #HR0_Hrvatska {
     fill-rule: evenodd;
     clip-rule: evenodd;
-    stroke: #fff;
+    stroke: #000;
     stroke-width: 1;
     stroke-miterlimit: 10
     }

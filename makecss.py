@@ -17,7 +17,7 @@ def calccoords(xinyin):
     right = 19.447751
     left = 13.491044
     # t=4
-    t = 5
+    t = 3
     # b=301
     b = 307
     r = 310
@@ -62,10 +62,6 @@ import cssutils
 stylecss = cssutils.parseString(style[0].firstChild.nodeValue)
 
 zupss = {i: data["zupanije"][i]["gdpp"] for i in data["zupanije"]}
-# for i in lik:
-#    j=i.split()
-#    zupss[i[i.find(".")+5:i.find(",",i.find(".")+5)-2]]=int(j[-1].replace(',',''))
-# pprint(zupss)
 g = list()
 gdp = list()
 gdpcolor = list()
@@ -102,30 +98,6 @@ for i in stylecss:
 doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
 with open("karta/hredditnew.svg", "w", encoding="utf8") as newsvg:
     doc.writexml(newsvg)
-
-# a = -1
-# for i in stylecss:
-#     a += 1
-#     if a == 1:
-#         i.style['fill'] = "#24A0ED"  # 'st1'
-#
-#         i.style['opacity'] = "0.5"
-#     if a == 2:
-#         i.style['fill'] = "#1A1A1B"
-#     if a == 4:
-#         i.style['fill'] = "#1A1A1B"
-# a = -1
-# for i in stylecss:
-#     a += 1
-#     if a < 6:
-#         continue
-#     i.style['stroke'] = "#000000"
-#     if a == 26:
-#         break
-# doc.getElementsByTagName("style")[0].firstChild.nodeValue = stylecss.cssText.decode('utf-8')
-#
-# with open("karta/hredditnewdark.svg", "w", encoding="utf8") as newsvg:
-#     doc.writexml(writer=newsvg)
 
 ### GENERIRANJE GRBOVA
 width = 20
@@ -229,9 +201,13 @@ with open(file="karta/hredditnew.svg", mode="r", encoding="utf-8") as myfile:
 karteim = Image.new("RGBA", (KARTA_SIZE, KARTA_SIZE), (0, 0, 0, 0))
 im1 = Image.open("karta/hredditnew.png")
 # im2 = Image.open("karta/hredditnewdark.png")
+im1 = im1.convert(mode="RGBA")
+im1 = im1.crop((62, 49, 1096-71, 1061-54))
+
 im1 = im1.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
 # im2 = im2.resize(size=(KARTA_SIZE,KARTA_SIZE), resample=Image.LANCZOS)
-im1 = im1.convert(mode="RGBA")
+
+
 # # im2 = im2.convert(mode="RGBA")
 # # im.thumbnail(size=(height, width), resample=Image.LANCZOS)
 # # im = im.resize(size=(height,width), resample=Image.LANCZOS)
